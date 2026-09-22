@@ -18,6 +18,6 @@ app.use(cors({
 app.use("/employees", employeeRoutes);
 app.use("/auth" , authRouters)
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server is running on port-test ${PORT}`);
 })
