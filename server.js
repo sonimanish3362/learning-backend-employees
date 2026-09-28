@@ -12,7 +12,11 @@ const authRouters = require("./routes/authRoutes");
 
 app.use(express.json());
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://learning-frontend-project.vercel.app"
+    ]
 }));
 
 app.use("/employees", employeeRoutes);
