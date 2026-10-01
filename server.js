@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const db = require("./config/database");
+const path = require("path");
 
 const app = express();
 
@@ -18,6 +19,12 @@ app.use(cors({
         "https://learning-frontend-project.vercel.app"
     ]
 }));
+
+app.use(
+    "/uploads",
+    express.static(path.join(__dirname, "uploads"))
+);
+
 
 app.use("/employees", employeeRoutes);
 app.use("/auth" , authRouters)
